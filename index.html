@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TechNova 2025 - Global Tech Conference</title>
-    <!-- FLAG{html-comment-flag} -->
+
     <style>
       :root {
         --primary-color: #3498db;
@@ -12,7 +12,6 @@
         --dark-color: #2c3e50;
         --light-color: #ecf0f1;
         --accent-color: #e74c3c;
-        /* FLAG{css-variables-secret} */
       }
 
       * {
@@ -192,6 +191,7 @@
         width: 100%;
         height: 250px;
         object-fit: cover;
+        object-position: top;
       }
 
       .speaker-info {
@@ -509,7 +509,6 @@
         font-size: 1px;
       }
 
-      /* FLAG{look-at-media-queries} */
       @media screen and (max-width: 1337px) {
         body::after {
           content: "";
@@ -539,6 +538,7 @@
           <li><a href="#sponsors">Sponsors</a></li>
           <li><a href="#location">Location</a></li>
           <li><a href="#contact">Contact</a></li>
+          <!-- <li><a href="hidden.html">Hidden Tab</a></li> Could this lead to somewhere? -->
         </ul>
       </div>
     </nav>
@@ -558,6 +558,7 @@
 
     <section id="about" class="container">
       <h2 class="section-title">About TechNova</h2>
+      <!-- FLAG{html-comment-flag} -->
       <div class="features">
         <div class="feature-box">
           <div class="feature-icon">🌟</div>
@@ -615,7 +616,7 @@
       <div class="speakers">
         <div class="speaker-card">
           <img
-            src="/api/placeholder/300/300"
+            src="./assets/person2.jpg"
             alt="Dr. Sarah Chen"
             class="speaker-img"
           />
@@ -627,7 +628,7 @@
         </div>
         <div class="speaker-card">
           <img
-            src="/api/placeholder/300/300"
+            src="./assets/person.jpg"
             alt="Michael Rodriguez"
             class="speaker-img"
           />
@@ -639,7 +640,7 @@
         </div>
         <div class="speaker-card">
           <img
-            src="/api/placeholder/300/300"
+            src="./assets/person2.jpg"
             alt="Dr. Emily Johnson"
             class="speaker-img"
           />
@@ -652,11 +653,7 @@
           </div>
         </div>
         <div class="speaker-card">
-          <img
-            src="/api/placeholder/300/300"
-            alt="David Kim"
-            class="speaker-img"
-          />
+          <img src="./assets/person.jpg" alt="David Kim" class="speaker-img" />
           <div class="speaker-info">
             <h3>David Kim</h3>
             <p>Blockchain Architect, CryptoFuture</p>
@@ -886,33 +883,8 @@
         </p>
         <div class="sponsor-list">
           <img
-            src="/api/placeholder/150/80"
-            alt="TechCorp"
-            class="sponsor-item"
-          />
-          <img
-            src="/api/placeholder/150/80"
-            alt="Quantum Systems"
-            class="sponsor-item"
-          />
-          <img
-            src="/api/placeholder/150/80"
-            alt="Future Labs"
-            class="sponsor-item"
-          />
-          <img
-            src="/api/placeholder/150/80"
-            alt="CryptoFuture"
-            class="sponsor-item"
-          />
-          <img
-            src="/api/placeholder/150/80"
-            alt="DataSphere"
-            class="sponsor-item"
-          />
-          <img
-            src="/api/placeholder/150/80"
-            alt="NextGen AI"
+            src="./assets/cs-club-logo.png"
+            alt="Computer Science Club"
             class="sponsor-item"
           />
         </div>
@@ -925,11 +897,11 @@
     <section id="location" class="container">
       <h2 class="section-title">Conference Venue</h2>
       <div class="location">
-        <iframe
-          src="/api/placeholder/1200/400"
+        <img
+          src="./assets/sf-golden-gate.jpg"
           class="location-map"
           title="Conference location map"
-        ></iframe>
+        />
         <div class="location-info">
           <h3>San Francisco Convention Center</h3>
           <p>747 Howard Street, San Francisco, CA 94103</p>
@@ -1016,6 +988,16 @@
       </div>
 
       <div class="footer-bottom">
+        <p style="font-size: smaller; margin-bottom: 20px">
+          This website is fake and does not contain real information. The
+          purpose of this website remains withint the scope of a challenge part
+          of the
+          <a
+            href="https://cs-club-usj.github.io/blog/rally-cs-25"
+            style="color: white"
+            ><span>Computer Science Rally Paper 2025.</span></a
+          >
+        </p>
         <p>&copy; 2025 TechNova Conference. All Rights Reserved.</p>
         <p style="color: var(--dark-color)">FLAG{footer-copyright-flag}</p>
       </div>
@@ -1035,75 +1017,46 @@
           contactForm.addEventListener("submit", function (e) {
             e.preventDefault();
             alert(
-              "Thank you for your message! Our team will get back to you soon."
+              "Thank you for your message! Our team will get back to you soon. Here is a flag: " +
+                atob("ZmxhZ3thbGVydC1zZWNyZXQtbWVzc2FnZX0=")
             );
             contactForm.reset();
           });
         }
 
-        // Secret functions
-        function revealHiddenFlag() {
-          return "FLAG{function-return-flag}";
-        }
-
-        // Easter egg event
-        let keySequence = "";
-        const secretCode = "technova";
-
-        document.addEventListener("keydown", function (e) {
-          keySequence += e.key.toLowerCase();
-
-          if (keySequence.includes(secretCode)) {
-            console.log("FLAG{konami-code-flag}");
-            keySequence = "";
-          }
-
-          if (keySequence.length > 20) {
-            keySequence = keySequence.substring(keySequence.length - 10);
-          }
-        });
-
-        // Hidden metadata
-        const metaData = {
-          version: "1.0.0",
-          lastUpdated: "2025-05-01",
-          secretFlag: "FLAG{json-object-flag}",
-        };
-
         // Set a cookie with a flag
-        document.cookie =
-          "debugMode=FLAG{cookie-storage-flag}; path=/; expires=Fri, 31 Dec 2025 23:59:59 GMT";
+        document.cookie = `debugMode=${atob(
+          "RkxBR3tjb29raWUtc3RvcmFnZS1mbGFnfQ=="
+        )}; path=/; expires=Fri, 31 Dec 2025 23:59:59 GMT`;
 
         // Store a flag in local storage
         localStorage.setItem(
           "conferenceData",
           JSON.stringify({
             hasRegistered: false,
-            sessionId: "FLAG{local-storage-flag}",
+            sessionId: atob("RkxBR3tsb2NhbC1zdG9yYWdlLWZsYWd9"),
           })
         );
-
-        // Create a hidden flag in base64
-        const base64Flag = "RkxBR3tiYXNlNjQtZW5jb2RlZC1mbGFnfQ=="; // FLAG{base64-encoded-flag}
       });
 
       // Hidden flag in URL parameters
       function checkURLParams() {
         const params = new URLSearchParams(window.location.search);
         if (params.has("debug") && params.get("debug") === "true") {
-          console.log("FLAG{url-parameter-flag}");
+          console.log(atob("RkxBR3t1cmwtcGFyYW1ldGVyLWZsYWd9"));
         }
+      }
+
+      // Secret functions
+      // Can this function run somewhere?
+      function revealHiddenFlag() {
+        return atob("RkxBR3tmdW5jdGlvbi1yZXR1cm4tZmxhZ30=");
       }
 
       // Call function on load
       window.onload = function () {
         checkURLParams();
       };
-
-      /*
-       * FLAG{multi-line-comment-flag}
-       * This is a hidden flag in a multi-line JavaScript comment
-       */
     </script>
   </body>
 </html>
